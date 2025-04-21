@@ -1,0 +1,21 @@
+FROM ubuntu:20.04
+
+# Configura entorno sin preguntas interactivas
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instala Python 3.8 y dependencias
+RUN apt-get update && apt-get install -y \
+    python3.8 \
+    python3-pip \
+    python3-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Crea enlace simbólico para python3
+RUN ln -s /usr/bin/python3.8 /usr/local/bin/python
+
+# Instala ChromaDB específico
+RUN pip3 install chromadb==0.4.22 pysqlite3-binary uvicorn
+
+EXPOSE 8000
+CMD ["uvicorn", "chromadb.app:app", "--host", "0.0.0.0", "--port", "8000"]
