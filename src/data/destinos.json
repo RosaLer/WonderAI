@@ -1,0 +1,20 @@
+[
+    {
+      "id": "1",
+      "content": "París es la capital de Francia. Atracciones: Torre Eiffel, Louvre y Notre-Dame. Se recomienda visitar en primavera.",
+      "metadata": {
+        "ciudad": "París",
+        "pais": "Francia",
+        "temas": ["turismo", "clima"]
+      }
+    },
+    {
+      "id": "2",
+      "content": "Tokio es una megaciudad con mezcla de tradición y tecnología. Imperdibles: Shibuya, Asakusa y el Monte Fuji.",
+      "metadata": {
+        "ciudad": "Tokio",
+        "pais": "Japón",
+        "temas": ["cultura", "arquitectura"]
+      }
+    }
+  ]
