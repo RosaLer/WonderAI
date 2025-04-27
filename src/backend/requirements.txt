@@ -1,7 +1,8 @@
 fastapi
-chromadb==0.4.22
+chromadb==0.3.21
 pysqlite3-binary
 uvicorn
 langchain
 sentence-transformers
 python-dotenv
+posthog>=2.4.0

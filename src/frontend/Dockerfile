@@ -1,25 +1,18 @@
-FROM node:18-slim
+FROM node:12.22.12-stretch-slim  
 
 WORKDIR /app
 
 # 1. Copiar solo los archivos necesarios para instalar dependencias
-COPY package.json package-lock.json ./
+COPY package.json ./
+RUN npm install --silent --no-optional && \
+    npm cache clean --force
 
-# 2. Instalar dependencias con cache limpia
-RUN npm ci --silent
-
-# Verificación explícita de react-scripts (opcional)
-RUN if [ ! -d "node_modules/react-scripts" ]; then npm install react-scripts; fi
-
-# 3. Copiar el resto del código
+# 2. Copiar el resto (ahora incluyendo package-lock.json generado)
 COPY . .
 
-# 4. Variables de entorno
-ENV NODE_ENV=production \
-    PORT=3000
+# 3. Configuración para macOS antiguo
+ENV CI=true
+ENV NODE_OPTIONS="--max-old-space-size=2048"
 
-# 5. Puerto expuesto
 EXPOSE 3000
-
-# 6. Comando de inicio
 CMD ["npm", "start"]

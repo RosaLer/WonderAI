@@ -1,17 +1,19 @@
 version: '2.4'
 
 services:
-  chromadb:  # Servicio separado para ChromaDB
+  chromadb:
     build: ./src/backend
-    command: python run_chroma.py --port 8001
+    command: python run_chroma.py --port 8001  
     ports:
       - "8001:8001"
     volumes:
       - chroma_data:/data
+      - ./src/backend:/app  
     environment:
       - CHROMA_DB_PATH=/data/chroma
+    restart: on-failure
 
-  backend:  # Solo para FastAPI
+  backend:
     build: ./src/backend
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
@@ -20,6 +22,7 @@ services:
       - ./src/backend:/app
     depends_on:
       - chromadb
+    restart: unless-stopped
 
   frontend:
     build: ./src/frontend
@@ -27,8 +30,10 @@ services:
       - "3000:3000"
     volumes:
       - ./src/frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
+    restart: unless-stopped
 
 volumes:
   chroma_data:
