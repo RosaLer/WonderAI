@@ -1,4 +1,3 @@
-# rag_engine.py
 import json
 import os
 import textwrap
@@ -12,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class RAGEngine:
     def __init__(self):
-        # Configuración de logging
+        #Logging
         self.logger = logging.getLogger('RAGEngine')
         self.logger.setLevel(logging.DEBUG)
         handler = logging.StreamHandler()
@@ -25,7 +24,7 @@ class RAGEngine:
         self.docs_path = os.path.join(BASE_DIR, "../chromadb/data/docs.json")
         self.embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
-        # Inicialización de ChromaDB
+        #Inicializando ChromaDB
         self.client = chromadb.Client()
         self.ef = embedding_functions.SentenceTransformerEmbeddingFunction(
             model_name="all-MiniLM-L6-v2"
@@ -35,7 +34,7 @@ class RAGEngine:
         )
         self._load_documents()
 
-        # Inicialización del modelo LLM
+        #Inicializando modelo LLM
         model_path = os.path.join(BASE_DIR, "../models/TinyLlama-1.1B-Chat-v1.0.Q4_K_M.gguf")
         self.logger.info(f"Cargando modelo desde: {model_path}")
         
@@ -81,7 +80,7 @@ class RAGEngine:
         try:
             self.logger.info(f"\n{'='*50}\nNueva consulta recibida: '{question}'\n{'='*50}")
             
-            # Paso 1: Consulta a ChromaDB
+            #Consulta a la BBDD
             self.logger.debug(f"Buscando {n_results} resultados para la pregunta")
             results = self.collection.query(query_texts=[question], n_results=n_results)
             
@@ -92,11 +91,11 @@ class RAGEngine:
                 self.logger.warning("No se encontraron documentos relevantes")
                 return "No tengo información suficiente."
 
-            # Paso 2: Procesamiento del contexto
+            #Procesamndo el contexto
             context = "\n".join([f"Información {i+1}: {doc.strip()}" for i, doc in enumerate(results["documents"][0])])
             self.logger.debug(f"\nContexto recuperado:\n{context}\n")
 
-            # Paso 3: Construcción del prompt
+            #Construyendo el prompt
             prompt = textwrap.dedent(f"""\
                 [INST] DEBES responder en UN ÚNICO PÁRRAFO de 5-8 oraciones maximo.
                 PROHIBIDO usar viñetas, números o saltos de línea.
@@ -113,7 +112,7 @@ class RAGEngine:
             
             self.logger.debug(f"\nPrompt completo enviado al modelo:\n{prompt}\n")
 
-            # Paso 4: Llamada al modelo
+            #Llamando al modelo
             self.logger.info("Enviando prompt al modelo LLM...")
             out = self.llm(
                 prompt=prompt,
@@ -126,7 +125,7 @@ class RAGEngine:
             
             self.logger.debug(f"\nRespuesta cruda del modelo: {out}")
 
-            # Paso 5: Procesamiento de la respuesta
+            #Procesando la respuesta
             response = out["choices"][0]["text"].strip()
             self.logger.info(f"Respuesta generada: '{response}'")
             

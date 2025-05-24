@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Este archivo es opcional si tienes estilos
-import App from './App'; // Asegúrate de que App.js esté en la misma carpeta
-import reportWebVitals from './reportWebVitals'; // Esto es opcional para medir el rendimiento
+import './index.css'; 
+import App from './App'; 
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root') // Este es el div donde React montará la app
+  document.getElementById('root') 
 );
 
-// Si quieres medir el rendimiento de la app, puedes pasar una función a reportWebVitals
+
 reportWebVitals();
