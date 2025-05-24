@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# Salir si ocurre algún error
+# En caso de eror, salir
 set -e
 
-# Ruta absoluta al script
+#Rutas para los Scripts de backend y fronted
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Iniciar backend (puerto 8001 con recarga automática)
-echo "🚀 Iniciando backend en el puerto 8001..."
+#Iniciando backend
+echo "Iniciando backend en el puerto 8001..."
 cd "$SCRIPT_DIR/src/backend"
 uvicorn main:app --port 8001 --reload &
 
-# Guardar el PID del backend para poder matarlo al final
 BACKEND_PID=$!
 
-# Iniciar frontend
-echo "🌐 Iniciando frontend (npm start)..."
+#Iniciando frontend
+echo "Iniciando frontend (npm start)..."
 cd "$SCRIPT_DIR/src/frontend"
 npm start
 
-# Si cierras el frontend (Ctrl+C), también se cierra el backend
-trap "echo '🛑 Deteniendo backend (PID $BACKEND_PID)...'; kill $BACKEND_PID" EXIT
+#Al usar (Ctrl+C) se cierra todo
+trap "echo 'Deteniendo backend (PID $BACKEND_PID)...'; kill $BACKEND_PID" EXIT
