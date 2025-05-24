@@ -100,9 +100,11 @@ class RAGEngine:
             prompt = textwrap.dedent(f"""\
                 [INST] DEBES responder en UN ÚNICO PÁRRAFO de 5-8 oraciones maximo.
                 PROHIBIDO usar viñetas, números o saltos de línea.
-                
                 Usa SOLO esta información:
                 {context}
+                
+                PROHIBIDO decir cosas que no estén en la información.
+                PROHIBIDO dejar frases a medias.
     
                 Pregunta:
                 {question}
@@ -119,7 +121,7 @@ class RAGEngine:
                 temperature=0.6,
                 top_p=0.95,
                 repeat_penalty=1.2,
-                stop=["Pregunta:", "Usuario:", "\n\n"]
+                stop=["Pregunta:", "Usuario:", "Respuesta:" "\n\n"]
             )
             
             self.logger.debug(f"\nRespuesta cruda del modelo: {out}")

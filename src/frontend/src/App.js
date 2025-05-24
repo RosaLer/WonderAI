@@ -49,8 +49,11 @@ function App() {
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <h2>WonderAI</h2>
-        <p>Asistente de viajes inteligente</p>
+        <img 
+          src={process.env.PUBLIC_URL + '/logoWonderAI.png'} 
+          alt="WonderAI Logo" 
+          className="logo-image"
+        />
       </div>
 
       <div className="chat-messages">
