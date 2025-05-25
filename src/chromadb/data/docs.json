@@ -1,20 +1,74 @@
 [
   {
     "id": "1",
-    "content": "París es la capital de Francia. Atracciones: Torre Eiffel, Louvre y Notre-Dame. Se recomienda visitar en primavera.",
+    "content": "París es la capital de Francia y una de las ciudades más románticas del mundo. Atracciones principales: Torre Eiffel (abierta de 9:00 a 23:45, precio 26€ adultos), Museo del Louvre (cerrado los martes, entrada 17€), Catedral de Notre-Dame (actualmente en restauración). Barrios destacados: Montmartre, Le Marais y Saint-Germain-des-Prés. Gastronomía: croissants, baguettes, macarons y vinos franceses. Se recomienda visitar en primavera (abril-junio) cuando las temperaturas son suaves (15-20°C) y hay menos turistas. El metro de París es eficiente y tiene 16 líneas. Idioma oficial: francés, aunque muchos hablan inglés en zonas turísticas.",
     "metadata": {
       "ciudad": "París",
       "pais": "Francia",
-      "temas": "turismo, clima"
+      "temas": "turismo, clima, transporte, gastronomía, cultura",
+      "moneda": "Euro (€)",
+      "mejor_época": "Abril-Junio",
+      "horario_comercial": "9:00-19:00"
     }
   },
   {
     "id": "2",
-    "content": "Tokio es una megaciudad con mezcla de tradición y tecnología. Imperdibles: Shibuya, Asakusa y el Monte Fuji.",
+    "content": "Tokio es la capital de Japón, una megaciudad futurista donde conviven la tradición y la tecnología. Lugares imprescindibles: Cruce de Shibuya (el más concurrido del mundo), templo Sensō-ji en Asakusa, barrio electrónico de Akihabara. También el cercano Monte Fuji (excursión de un día). Barrios destacados: Shinjuku, Harajuku y Ginza. Experiencias únicas: baños termales (onsen), restaurantes de sushi con cinta transportadora, karaokes privados. El clima es templado (veranos húmedos 25-30°C, inviernos fríos 5-10°C). Transporte: metro extremadamente puntual (compra el pase JR para turistas). Consejo: llevar efectivo ya que muchas tiendas no aceptan tarjetas. Idioma: japonés, poco inglés hablado.",
     "metadata": {
       "ciudad": "Tokio",
       "pais": "Japón",
-      "temas": "cultura, arquitectura"
+      "temas": "cultura, tecnología, turismo, transporte, tradiciones",
+      "moneda": "Yen (¥)",
+      "mejor_época": "Octubre-Noviembre",
+      "horario_comercial": "10:00-20:00"
+    }
+  },
+  {
+    "id": "3",
+    "content": "Nueva York es la ciudad más poblada de Estados Unidos y un centro cultural global. Iconos: Estatua de la Libertad (visitas con ferry), Central Park (340 hectáreas de naturaleza), Times Square (espectacular de noche) y Empire State Building (vistas panorámicas). Barrios famosos: Manhattan, Brooklyn, Queens y Harlem. Museos destacados: MET, MoMA y Museo de Historia Natural. Otoño (septiembre-noviembre) es ideal por el follaje otoñal y temperaturas agradables (15-20°C). Transporte: metro funciona 24/7 (compra MetroCard). Gastronomía: bagels, pizza neoyorquina, cheesecake. Consejo: dejar propina (15-20% en restaurantes). Eventos anuales: Maratón de NY, Tree Lighting en Rockefeller Center.",
+    "metadata": {
+      "ciudad": "Nueva York",
+      "pais": "Estados Unidos",
+      "temas": "turismo, cultura, transporte, gastronomía, eventos",
+      "moneda": "Dólar ($)",
+      "mejor_época": "Septiembre-Noviembre",
+      "horario_comercial": "10:00-21:00"
+    }
+  },
+  {
+    "id": "4",
+    "content": "Londres, capital del Reino Unido, combina historia milenaria con modernidad. Atracciones principales: Big Ben y Parlamento (visitas guiadas disponibles), Torre de Londres (joyas de la corona), London Eye (vistas panorámicas) y Museo Británico (entrada gratuita). Barrios emblemáticos: Westminster, Camden, Notting Hill y Soho. Clima: lluvioso todo el año (llevar paraguas), veranos suaves (20-25°C), inviernos fríos (2-8°C). Transporte: metro (Tube) con famoso mapa, autobuses rojos de dos pisos. Gastronomía: fish and chips, afternoon tea, Sunday roast. Eventos: Cambio de Guardia en Buckingham Palace, Wimbledon. Consejo: comprar Oyster Card para transporte. Idioma: inglés, con muchos acentos internacionales.",
+    "metadata": {
+      "ciudad": "Londres",
+      "pais": "Reino Unido",
+      "temas": "historia, turismo, transporte, eventos, cultura",
+      "moneda": "Libra esterlina (£)",
+      "mejor_época": "Mayo-Septiembre",
+      "horario_comercial": "9:00-19:00"
+    }
+  },
+  {
+    "id": "5",
+    "content": "Sídney es la ciudad más grande de Australia, famosa por su espectacular puerto y playas. Atracciones: Ópera de Sídney (visitas guiadas disponibles), Puente de la Bahía (posible subir con arnés), Bondi Beach (surf y piscinas naturales) y Taronga Zoo. Barrios destacados: Circular Quay, Darling Harbour y The Rocks. Clima: verano (diciembre-febrero) 25-35°C, ideal para playas; invierno (junio-agosto) 10-20°C. Naturaleza: excursiones a Blue Mountains y parques nacionales cercanos. Transporte: Opal Card para ferry, tren y autobús. Gastronomía: barbacoas, mariscos frescos, café de calidad. Eventos: Año Nuevo con fuegos artificiales en el puerto, Festival Vivid Sydney. Consejo: protección solar obligatoria por intenso sol.",
+    "metadata": {
+      "ciudad": "Sídney",
+      "pais": "Australia",
+      "temas": "playas, naturaleza, turismo, eventos, gastronomía",
+      "moneda": "Dólar australiano (A$)",
+      "mejor_época": "Septiembre-Noviembre",
+      "horario_comercial": "9:00-17:30"
+    }
+  },
+  {
+    "id": "6",
+    "content": "Dubái, en Emiratos Árabes Unidos, es sinónimo de lujo y arquitectura futurista. Atracciones: Burj Khalifa (edificio más alto del mundo, visita al mirador At The Top), Palm Jumeirah (isla artificial), Dubai Mall (centro comercial más grande del mundo con acuario y pista de patinaje) y desierto (safaris en 4x4 con cena beduina). Clima: extremadamente caluroso en verano (40-50°C), ideal visitar noviembre-marzo (25-30°C). Compras: zoco del oro, zoco de las especias, duty free en aeropuerto. Gastronomía: mezze libanés, dátiles, café árabe. Transporte: metro automatizado, taxis abundantes. Consejos: vestir modestamente en zonas tradicionales, evitar público afecto en Ramadán. Eventos: Dubai Shopping Festival, carreras de camellos. Idioma: árabe, pero inglés muy extendido.",
+    "metadata": {
+      "ciudad": "Dubái",
+      "pais": "Emiratos Árabes Unidos",
+      "temas": "lujo, arquitectura, compras, aventuras, cultura",
+      "moneda": "Dirham (AED)",
+      "mejor_época": "Noviembre-Marzo",
+      "horario_comercial": "10:00-22:00 (centros comerciales hasta medianoche)"
     }
   }
 ]
