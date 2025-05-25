@@ -117,8 +117,8 @@ class RAGEngine:
             out = self.llm(
                 prompt=prompt,
                 max_tokens=300,
-                temperature=0.6,
-                top_p=0.95,
+                temperature=0.5,
+                top_p=0.90,
                 repeat_penalty=1.2,
                 stop=["Pregunta:", "Usuario:", "Respuesta:" "\n\n"]
             )
