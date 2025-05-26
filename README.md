@@ -36,12 +36,12 @@ WONDERAI/
    bash:
    git clone https://github.com/RosaLer/WonderAI.git
    cd wonderai
-   cd src/backend
-   python -m venv venv
-   source venv/bin/activate
+   cd src/
+   python -m venv .venv
+   source .venv/bin/activate
 
 2. **Instala dependencias del backend**
-
+   pip install --upgrade pip
    pip install -r requirements.txt 
 
 3. **Instala dependencias del frontend**
