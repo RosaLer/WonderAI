@@ -128,7 +128,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-*.venv3
+.venv3
 env/
 venv/
 ENV/
@@ -181,7 +181,10 @@ cython_debug/
 *.tflite
 *.h5
 
+#fronted
+node_modules/*
+
 # Hugging Face
-models/
+models/*
 checkpoints/
 weights/
